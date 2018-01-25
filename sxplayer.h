@@ -103,6 +103,7 @@ struct sxplayer_frame {
     void *mvs;          // motions vectors (AVMotionVector*)
     int nb_mvs;         // number of motions vectors
     int64_t ms;         // video timestamp in microseconds
+    int64_t pts;        // video presentation time stamp in stream timebase unit
     void *internal;     // sxplayer internal frame context frame, do not alter
 };
 
@@ -111,6 +112,7 @@ struct sxplayer_info {
     int height;
     double duration;
     int is_image;
+    int timebase[2];    // stream timebase
 };
 
 /**
